@@ -20,8 +20,9 @@ def process():
     }
     if not User.validate_user(request.form):
         return redirect("/")
-    User.save(data)
-    return redirect('/welcome')
+    else:
+        User.save(data)
+        return redirect('/welcome')
 
 
 @app.route("/check", methods = ["POST"])
